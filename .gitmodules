@@ -1,0 +1,3 @@
+[submodule "pyfs"]
+	path = pyfs
+	url = https://github.com/thetrueduck420/pyfs
