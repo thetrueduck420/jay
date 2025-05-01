@@ -1,15 +1,28 @@
 import pyfs.pyfs as pyfs
 
-data = [];
-while(True):
-    user_input = input("prompt: ")
+def edit():
+    print("edit mode, say 'user' to go to user mode");
+    while (True):
+        edit_input = input("edit: ");
+        if (edit_input == "user"):
+            break;
+
+        print("what should i evaluate: ")
+        code = input("code: ");
+        pyfs.addFile(edit_input, code);
+
+def user():
+    user_input = input("prompt: ");
     if (user_input == "exit"):
-        break;
-    else:
-        if user_input in pyfs.fs:
-            print(pyfs.readFile(user_input));
-        else:
-            pyfs.addFile(user_input, input("what should i say?: "))
+        exit();
+    if (user_input == "edit"):
+        edit();
+    if (user_input in pyfs.fs):
+        eval(pyfs.readFile(user_input));
+
+print("default to user mode, say 'edit' to edit things");
+while(True):
+    user();
 
             
     
