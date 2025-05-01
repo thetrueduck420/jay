@@ -1,4 +1,4 @@
-import pyfs.pyfs as pyfs
+import pyf.pyfs as pyfs
 
 def edit():
     print("edit mode, say 'user' to go to user mode");
