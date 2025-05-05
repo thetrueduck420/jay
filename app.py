@@ -8,7 +8,7 @@ def ask(text):
     file = diff.get_close_matches(text, knowledge, 1);
     file = str(file).split("'");
     with open ("./database/" + file[1]) as f:
-        print(f.read());
+        eval(f.read());
 
 def edit(text, code):
     filename = Path("./database/" + text);
